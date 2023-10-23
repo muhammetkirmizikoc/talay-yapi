@@ -54,7 +54,6 @@ header .logo {
     justify-content: space-between;
     align-items: center;
     background: #111;
-    transition: 0.5s;
     z-index: 2;
     display: flex;
     align-items: center;
@@ -119,7 +118,6 @@ header .logo {
     margin-top: 10px;
     color: #111;
     letter-spacing: 2px;
-    transition: 0.2s;
 }
 
 .text a:hover {
@@ -144,7 +142,6 @@ header .logo {
     margin-right: 20px;
     filter: invert(1);
     transform: scale(0.5);
-    transition: 0.5s;
 }
 
 .social li a:hover {
