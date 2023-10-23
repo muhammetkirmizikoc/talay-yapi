@@ -56,6 +56,10 @@ header .logo {
     background: #111;
     transition: 0.5s;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .showcase.active {
