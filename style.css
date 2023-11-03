@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
-* {
+body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-
+* {
+    font-family: 'Poppins', sans-serif;
+    transition: all 250ms;
+}
 header {
-    position: absolute;
+    position: fixed;
+    height: 12vh;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,37 +25,44 @@ header .logo {
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
+    left: 3vh;
 }
 
 .toggle {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: url(https://i.ibb.co/HrfVRcx/menu.png);
+    position: absolute;
+    top: vh;
+    right: 1vh;
+    width: 50px;
+    height: 50px;
+    background: url(https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png);
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
     cursor: pointer;
+    z-index: 9999;
+    border-radius: 50px;
+    background-color: #ddd;
+    transition: all 400ms;
 }
 
 .toggle.active {
-    background: url(https://i.ibb.co/rt3HybH/close.png);
+    background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_exit2-512.png);
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: center;
+    background-color: #ddd;
     cursor: pointer;
 }
 
 .showcase {
     position: absolute;
-    right: 1vh;
     width: 100%;
     min-height: 100vh;
     padding: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #111;
+    transition: 0.5s;
     z-index: 2;
     display: flex;
     align-items: center;
@@ -71,16 +80,16 @@ header .logo {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: #03a9f4;
+    min-height: 100%;
     mix-blend-mode: overlay;
 }
 
 .text {
     position: relative;
-    top: 10vh;
+    top: 15vh;
     margin: 0 auto;
     z-index: 10;
+    width: 100%;
 }
 
 .text h2 {
@@ -107,8 +116,8 @@ header .logo {
     max-width: 700px;
 }
 
-.text a {
-    display: inline-block;
+.button{
+    display: block;
     font-size: 1em;
     background: #fff;
     padding: 10px 30px;
@@ -120,36 +129,14 @@ header .logo {
     letter-spacing: 2px;
 }
 
-.text a:hover {
+.button:hover {
     letter-spacing: 6px;
+    text-decoration: none;
 }
 
-.social {
-    position: absolute;
-    z-index: 10;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.social li {
-    list-style: none;
-}
-
-.social li a {
-    display: inline-block;
-    margin-right: 20px;
-    filter: invert(1);
-    transform: scale(0.5);
-}
-
-.social li a:hover {
-    transform: scale(0.5) translateY(-15px);
-}
 
 .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 300px;
@@ -216,10 +203,32 @@ header .logo {
 
 
 .sayisal-alan{
-    height: 40vh;
-    width: 90%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+}
+.sayisal-alan p{
+    width: 190px;
+}
+.instagram{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.instagram i {
+    position: fixed;
+    bottom: 2vh;
+    left: 3vh;
+    font-size: 3rem;
+    color: #fff;
+    padding: 15px;
+    z-index: 999;
+    background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-radius: 40px;
+}
+.instagram:hover{
+    color: #ddd;
 }
