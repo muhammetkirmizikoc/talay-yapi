@@ -1,30 +1,89 @@
-//slider alanı ıcın
-const menuToggle = document.querySelector('.toggle');
-const showcase = document.querySelector('.showcase');
+$('.slider').each(function () {
+    var $this = $(this);
+    var $group = $this.find('.slide_group');
+    var $slides = $this.find('.slide');
+    var bulletArray = [];
+    var currentIndex = 0;
+    var timeout;
 
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    showcase.classList.toggle('active');
-})
+    function move(newIndex) {
+        var animateLeft, slideLeft;
 
-// Don't forget to use the polyfill for forEach! :) 
+        advance();
 
-document.querySelectorAll('.number-animate').forEach( (el) => {
-    const endValue = el.getAttribute('data-end-value');
-    const incrementValue = el.getAttribute('data-increment');
-    const durationValue = el.getAttribute('data-duration');
-    
-    if (endValue) numberAnimation(el, endValue, incrementValue, durationValue);
-    
-  });
-  
-  
-  function numberAnimation(el, endValue, incrementor, duration) {
-    anime({
-      targets: el,
-      textContent: endValue,
-      round: incrementor ? 1/incrementor : 1/5,
-      easing: 'easeInOutQuad',
-      duration: duration ? duration : 4000,
+        if ($group.is(':animated') || currentIndex === newIndex) {
+            return;
+        }
+
+        bulletArray[currentIndex].removeClass('active');
+        bulletArray[newIndex].addClass('active');
+
+        if (newIndex > currentIndex) {
+            slideLeft = '100%';
+            animateLeft = '-100%';
+        } else {
+            slideLeft = '-100%';
+            animateLeft = '100%';
+        }
+
+        $slides.eq(newIndex).css({
+            display: 'block',
+            left: slideLeft
+        });
+        $group.animate({
+            left: animateLeft
+        }, function () {
+            $slides.eq(currentIndex).css({
+                display: 'none'
+            });
+            $slides.eq(newIndex).css({
+                left: 0
+            });
+            $group.css({
+                left: 0
+            });
+            currentIndex = newIndex;
+        });
+    }
+
+    function advance() {
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            if (currentIndex < ($slides.length - 1)) {
+                move(currentIndex + 1);
+            } else {
+                move(0);
+            }
+        }, 4000);
+    }
+
+    $('.next_btn').on('click', function () {
+        if (currentIndex < ($slides.length - 1)) {
+            move(currentIndex + 1);
+        } else {
+            move(0);
+        }
     });
-  }
+
+    $('.previous_btn').on('click', function () {
+        if (currentIndex !== 0) {
+            move(currentIndex - 1);
+        } else {
+            move(3);
+        }
+    });
+
+    $.each($slides, function (index) {
+        var $button = $('<a class="slide_btn">&bull;</a>');
+
+        if (index === currentIndex) {
+            $button.addClass('active');
+        }
+        $button.on('click', function () {
+            move(index);
+        }).appendTo('.slide_buttons');
+        bulletArray.push($button);
+    });
+
+    advance();
+});
