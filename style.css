@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -10,7 +12,8 @@ body {
 a {
     color: #000;
 }
-*{
+
+* {
     transition: all 250ms;
 }
 
@@ -222,11 +225,12 @@ a.slide_btn {
     max-width: 940px;
     position: relative;
     top: -140px;
+    top: -40vh;
 }
 
 .previous_btn {
     bottom: 0;
-    left: 100px;
+    left: 10px;
     margin: auto;
     position: absolute;
     top: 0;
@@ -236,7 +240,7 @@ a.slide_btn {
     bottom: 0;
     margin: auto;
     position: absolute;
-    right: 100px;
+    right: 10px;
     top: 0;
 }
 
@@ -259,11 +263,11 @@ a.slide_btn {
 
 @media only screen and (max-width: 767px) {
     .previous_btn {
-        left: 50px;
+        left: 20px;
     }
 
     .next_btn {
-        right: 50px;
+        right: 20px;
     }
 }
 
@@ -318,58 +322,102 @@ a.slide_btn {
 .wp {
     background-color: #25D366;
 }
-.alan-1{
+
+.alan-1 {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
 }
+
 .alex{
+    border-radius: 4px;
+    display: flex;
+    font-family: Outfit;
+    letter-spacing: 1px;
+    background: #45bd321b;
+    padding: 10px;
+    color:#1c4915;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     float: left;
-    width: 70%;
+    width: 100%;
 }
-.alan-1 img{
+.alex::before{
+    content: "";
+    display: block;
+    border:5px solid #44bd32;
+    margin-right: 12px;
+    border-radius: 10px;
+}
+.alan-1 img {
     width: 300px;
 }
 
-@media  only screen and (min-width:700px){
-    .alex{
+@media only screen and (min-width:700px) {
+    .alex {
         width: 70%;
     }
+    .alan-1 img{
+        width: 27%;
+    }
 }
-.dis-cephe{
+
+@media only screen and (max-width:700px) {
+    .alan-1 img{
+        position: relative;
+        top: 2.5vh;
+    }
+}
+
+.dis-cephe {
     margin: 5vh 0;
     height: 90vh;
-    background-image: url(https://www.izmirdetadilat.com/files/uploads/images/hizmet/ic-ve-dis-cephe-mantolama6.jpg);
+    background-image: url(https://www.aa.com.tr/uploads/userFiles/a54ea27f-6036-4f79-88c6-6bc9ba19a35d/08_Nisan%2F05%20eyl%C3%BCl%2F06%2FAA-32323264.jpg);
     position: relative;
     background-position: center;
     background-position: no-repeat;
     background-size: cover;
     border-radius: 15px;
 }
-.cephe-baslik{
+
+.cephe-baslik {
     color: #fff;
     position: absolute;
+    backdrop-filter: blur(15px);
+    background-color: rgba(230, 230, 230, 0.232);
     top: 10vh;
-    padding: 5px;
+    padding: 20px;
 }
-.cephe-yazi{
-    color: #353535;
+
+.cephe-yazi {
+    color: #23293f;
     position: absolute;
     bottom: 10vh;
     margin: 0 20px;
     padding: 5px 10px;
     text-shadow: 5px 0px 17px rgb(226, 226, 226);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
     border-radius: 15px;
 }
 
-.ic-mekan{
+.ic-mekan {
     margin: 5vh 0;
     height: 90vh;
-    background-image: url(https://i0.wp.com/www.decofixdekorasyon.com/wp-content/uploads/2020/03/WhatsApp-Image-2020-03-14-at-22.04.58-15.jpeg);
+    background-image: url(https://www.catikatidekorasyonu.com/wp-content/uploads/2019/01/asma-tavan-5.jpg);
+    background-position: center;
+    background-position: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.surdurebilirlik {
+    margin: 5vh 0;
+    height: 90vh;
+    background-image: url(https://icosse.org/sites/default/files/images/conference/lead/6006_21_icosse2021_virtual_hero_image_1600x1000.jpg);
     background-position: center;
     background-position: no-repeat;
     background-size: cover;
@@ -377,38 +425,60 @@ a.slide_btn {
     z-index: -1;
     border-radius: 15px;
 }
-.surdurebilirlik{
-    margin: 5vh 0;
-    height: 90vh;
-    background-image: url(https://thebclog.com/Media/Uploads/yesil_insaat3.png);
-    background-position: center;
-    background-position: no-repeat;
-    background-size: cover;
-    position: relative;
-    z-index: -1;
-    border-radius: 15px;
-}
-@media  only screen and (max-width:700px){
-    .alan-1 img{
+
+@media only screen and (max-width:700px) {
+    .alan-1 img {
         width: 80%;
         margin-top: 3vh;
         margin: 0 auto;
     }
-    .cephe-yazi{
+
+    .cephe-yazi {
         bottom: 10px;
     }
-    
+
 }
 
+.arkaplan {
+    background-image: url(https://th.bing.com/th/id/OIG.ykMSs2SLRgnoCbDBuABe?pid=ImgGn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-weight: bolder;
+    font-family: Outfit;
+    border-radius: 4px;
 
+}
+.oz-yazi::before{
+    content: "";
+    display: block;
+    border:3px solid #44bd32;
+    margin-right: 12px;
+    border-radius: 10px;
+}
+.oz-yazi{
+    border-radius: 4px;
+    display: flex;
+    font-family: Outfit;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    background: #45bd321b;
+    padding: 10px;
+    color:#1c4915;
+}
 
 .popup-container {
     display: inline-flex;
 }
+
 .popup-container .button {
     cursor: pointer;
     height: 10vh;
 }
+
 .popup-container .popup {
     position: fixed;
     top: 0;
@@ -421,7 +491,8 @@ a.slide_btn {
     visibility: hidden;
     transition: 400ms all;
 }
-.popup-container .popup > label {
+
+.popup-container .popup>label {
     position: absolute;
     top: 0;
     left: 0;
@@ -429,6 +500,7 @@ a.slide_btn {
     height: 100%;
     cursor: pointer;
 }
+
 .popup-container .popup .inner {
     position: absolute;
     top: 100%;
@@ -441,6 +513,7 @@ a.slide_btn {
     max-height: 100%;
     overflow: auto;
 }
+
 .popup-container .popup .inner .title {
     height: 40px;
     display: flex;
@@ -451,23 +524,29 @@ a.slide_btn {
     top: 0;
     background: #fff;
 }
+
 .popup-container .popup .inner .title label {
     font-size: 14px;
     color: #999;
     cursor: pointer;
 }
+
 .popup-container .popup .inner .title label:hover {
     color: #222;
 }
+
 .popup-container .popup .inner .content {
     padding: 5px 15px 15px;
 }
+
 .popup-container .popup .inner .content ul li {
     margin-bottom: 15px;
 }
+
 .popup-container .popup .inner .content ul li:last-child {
     margin-bottom: 0;
 }
+
 .popup-container .popup .inner .content ul li input {
     width: 100%;
     box-sizing: border-box;
@@ -476,9 +555,11 @@ a.slide_btn {
     padding-bottom: 10px;
     font-size: 12px;
 }
+
 .popup-container .popup .inner .content ul li input:focus {
     outline: 0;
 }
+
 .popup-container .popup .inner .content ul li button {
     width: 100%;
     height: 30px;
@@ -488,19 +569,23 @@ a.slide_btn {
     font-size: 13px;
     cursor: pointer;
 }
+
 .popup-container .popup .inner .content p {
     font-size: 13px;
     line-height: 130%;
     margin-bottom: 15px;
 }
+
 .popup-container .popup .inner .content p:last-child {
     margin-bottom: 0;
 }
+
 .popup-container .popup .inner .content .close-btn {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #ddd;
 }
+
 .popup-container .popup .inner .content .close-btn label {
     background: rgba(0, 0, 0, .05);
     display: block;
@@ -511,22 +596,27 @@ a.slide_btn {
     border-radius: 3px;
     cursor: pointer;
 }
+
 .popup-container .popup .inner .content .close-btn label:hover {
     background: rgba(0, 0, 0, .1);
 }
-.popup-container > input {
+
+.popup-container>input {
     position: absolute;
     left: -9999px;
     opacity: 0;
 }
-.popup-container > input:checked + .popup {
+
+.popup-container>input:checked+.popup {
     opacity: 1;
     visibility: visible;
 }
-.popup-container > input:checked + .popup .inner {
+
+.popup-container>input:checked+.popup .inner {
     top: 50%;
 }
-.fa-times{
+
+.fa-times {
     font-size: 1.5rem;
     color: #000;
 }
